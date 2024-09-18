@@ -1,0 +1,28 @@
+.number{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transition: 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin:8px;
+    cursor: pointer;
+}
+
+.number.active{
+    color: #fff;
+    background-color: #106CBD;
+}
+
+.number:hover{
+    background-color: #ebebeb;
+}
+
+.f1{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

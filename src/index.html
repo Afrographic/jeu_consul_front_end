@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" style="overflow-x: hidden;">
+
+<head>
+    <meta charset="utf-8">
+    <title>Jeu Consult</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,viewport-fit=cover">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+    <script src="assets/scripts/jsstore.js"></script>
+    <script src="assets/scripts/cinetpay.js"></script>
+    <script src="assets/scripts/socket.io.js"></script>
+    <script src="assets/scripts/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body class="body" id="body">
+
+    <!-- Notification handler -->
+    <div class="info  positive row g16" id="positive"
+        style="border-left:10px solid #EE0125;box-shadow: -1px 8px 20px 6px #5252521c;width: 80vw; max-width: 500px;"
+        onclick="this.classList.remove('info_visible')">
+        <img src="assets/images/success.svg" alt="" width="25px">
+        <div class="column f1">
+            <div style="font-weight:bold;font-size: 16px;">Success</div>
+            <div class="tal" id="content" style="color:grey;font-size: 12px;">Message</div>
+        </div>
+    </div>
+    
+    <div class="info  negative" id="negative"
+        style="border-left:10px solid #F70808;box-shadow: -1px 8px 20px 6px #5252521c;width: 80vw; max-width: 500px;"
+        onclick="this.classList.remove('info_visible')">
+        <img src="assets/images/error_msg.svg" alt="" width="25px">
+        <div class="column f1">
+            <div class="tal" id="content" style="color:grey;font-size: 12px;">Message</div>
+        </div>
+    </div>
+    
+
+    <app-root></app-root>
+
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js'></script>  	
+</body>
+
+</html>

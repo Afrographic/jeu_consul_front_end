@@ -1,0 +1,4 @@
+<div [@route_transition]="o.isActivated ? o.activatedRoute:''">
+    <router-outlet #o="outlet" (activate)="set_view_port_proxy()">
+    </router-outlet>
+</div>

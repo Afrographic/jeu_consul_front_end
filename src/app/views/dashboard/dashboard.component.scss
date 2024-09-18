@@ -1,0 +1,56 @@
+.main_dashboard{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_image{
+    width: 45px;
+    height: 45px;
+    background-image: url(../../../assets/images/profile.jpg);
+    border-radius: 50%;
+    cursor: pointer;
+    background-size: cover;
+}
+
+.body{
+    background-color: #F0F8FF;
+    flex:1;
+    padding:32px;
+    display: flex;
+    gap:32px;
+}
+
+.menu_block{
+    padding:16px;
+    background-color: #fff;
+    border-radius: 28px;
+}
+
+.previewer{
+    padding:32px;
+    background-color: #fff;
+    border-radius: 28px;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+}
+
+.menu_item{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+td,th{
+    text-align: center;
+    padding:16px;
+    font-size: 12px;
+}
+
+tr{
+    background-color: #fff;
+}

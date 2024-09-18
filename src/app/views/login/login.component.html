@@ -1,0 +1,42 @@
+<div class="bg_login login">
+    <div class="login_content">
+        <div class="image">
+
+        </div>
+        <div class="form column g32">
+            <img src="assets/images/logo.png" alt="" width="156px">
+            <div class="column g16 aic jcc">
+                <div class="h1">Login</div>
+                <div class="tac p">
+                    Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a,
+                    mattis
+                    tellus.
+                    <img src="assets/images/question.svg" class="cp" width="16px" alt="">
+                </div>
+            </div>
+            <div class="column g8" style="width: 100%;">
+                <div class="input_element">
+                    <img src="assets/images/email.svg" alt="" width="24px">
+                    <input type="text" class="f1" placeholder="Your email or telephone number">
+                </div>
+                <div class="input_element">
+                    <img src="assets/images/password.svg" alt="" width="24px">
+                    <input type="password" class="f1" placeholder="Your password">
+                </div>
+                <div class="row aic g16 cp" (click)="toggle_remember()">
+                    <div class="circle" [class.active]="remember"></div>
+                    <div class="p">Remember my login credentials</div>
+                </div>
+            </div>
+            <div class="column g16" style="width: 100%;">
+                <div class="btn_primary" (click)="go_to_dashboard()">Sign In</div>
+                <div class="row aic g8">
+                    <hr class="f1">
+                    <div>I forgot my password</div>
+                    <hr class="f1">
+                </div>
+                <div class="btn_secondary">I don’t have an account</div>
+            </div>
+        </div>
+    </div>
+</div>

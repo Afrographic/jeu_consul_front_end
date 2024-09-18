@@ -1,0 +1,43 @@
+.image_item {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.current_image {
+  position: fixed;
+  z-index: -1;
+}
+
+.zoom_parent {
+  height: 15px;
+  border-radius: 16px;
+  background-color: #fba12c5c;
+}
+
+.zoom_level {
+  width: 0%;
+  height: 100%;
+  border-radius: 16px;
+  background-color: #FCA22C;
+}
+
+.handle {
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  background-color: #FCA22C;
+  transform: scale(1.5) translateX(8px);
+}
+
+
+// Description styles
+.description_in_active{
+  max-height: 100px;
+}
+
+.description_active{
+  max-height: 50vh;
+}

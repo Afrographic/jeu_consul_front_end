@@ -1,0 +1,67 @@
+<div class="vw100 vh100 fadeFromBottom"
+    style="filter:blur(22px);position:fixed;z-index:50;background-image:url('{{bg_url}}');top:0;left:0;transform:scale(1.5);background-color:rgba(0, 0, 0, 0.454);">
+</div>
+
+<div class="vh100 column jcsb fadeFromBottom"
+    style="position:fixed;top:0;left:0;z-index:100;background-size:60%;width:100vw;user-select: none;cursor: grab;background-color:#f6f7fb00;"
+    (mousedown)="init_pan_desktop($event)" (mouseup)="stop_pan($event)" (mousemove)="pan_desktop($event)"
+    (touchstart)="init_pan_mobile($event)" (touchend)="stop_pan($event)" (touchcancel)="stop_pan($event)"
+    (touchmove)="pan_mobile($event)">
+  
+    <div class="row ai jcc mt8">
+        <div style="background-color:#0000009f;color:white;width:100px;" class="p16 br8 tac">
+            {{current_active_index+1}}/{{images.length}}
+        </div>
+    </div>
+
+    <img [src]="url" alt="" class="w100 current_image br8" *ngIf="can_render_image" (load)="image_rendered($event)"
+        (mousemove)="prevent_default($event)" >
+
+    <div style="background-color: #fca22c74;border-radius:16px;width:100%;" class=" br8 oh" *ngIf="downloading">
+        <div class="p8 row aic jcc" [style.width]="loaded_percentage"
+            style="font-size:11px;background-color: #FCA22C;border-radius:16px;">
+
+        </div>
+    </div>
+
+    <div class="column g16 p16">
+
+        <app-maat-slider [from_image_preview]="true" [enable_snapping]="false" [full_screen]="false"
+            [must_revert]="false" *ngIf="images.length>1" [total_images]="images.length">
+            <div class="maatSliderItem row g8">
+                <app-view-image-item *ngFor="let image of images;index as index" [image]="image" class="image_item cp"
+                    (on_view_image)="view_new_image($event,index)"></app-view-image-item>
+            </div>
+        </app-maat-slider>  
+ 
+        <!-- Close handler -->
+
+        <div class="web_item">
+            <div class="row aic jcc pf g16" style="top:64px;right:64px;z-index:4000">
+              
+                <img src="assets/images/close_image_preview.svg" alt="" class="cp button" width="45px"
+                    (click)="close()">
+            </div>
+        </div>
+
+      
+
+        <!-- zoom handler Mobile-->
+        <div class="mobile">
+            <div class="row aic jcc g16" (mousemove)="zoom_desktop($event)" (touchmove)="zoom_mobile($event)">
+                <img src="assets/images/back.svg" alt="" (click)="close()" class="mobile">
+                <div class="zoom_parent f1">
+                    <div class="zoom_level row jcfe">
+                        <div class="handle" (mousedown)="init_zoom_desktop($event)" (mouseup)="stop_zoom($event)"
+                            (touchstart)="init_zoom_mobile($event)" (touchend)="stop_zoom($event)"
+                            (touchcancel)="stop_zoom($event)"></div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,1 @@
+export const ringtone = new Audio("assets/audios/ring.mp3");
